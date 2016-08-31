@@ -13,6 +13,10 @@ The mvn-java-parent project is a maven parent project to extend for specific jav
 
 The source code comes under the liberal Apache License V2.0, making mvn-java-parent great for all types of java applications.
 
+## Maven Central
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent)
+
 ## How to use it
 
 Add as parent project in the `pom.xml` file:
@@ -24,10 +28,6 @@ Add as parent project in the `pom.xml` file:
 		<relativePath></relativePath>
 	</parent>
 	
-
-## Build status
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent)
 
 ## Want to Help and improve it? ###
 
