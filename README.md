@@ -1,7 +1,13 @@
 # mvn-java-parent
 
 
-The mvn-java-parent project is a maven parent project to extend for specific java projects
+The mvn-java-parent project is a maven parent project to extend for specific java projects.
+
+## Key features:
+
+1. Provides several plugins in the pluginManagement section that are useful for java projects.
+2. Provides several dependencies in the dependencyManagement section that are useful for java projects.
+3. Provides several profiles for signing, deploying, delombok and update license header.
 
 ## License
 
