@@ -1,6 +1,5 @@
 # mvn-java-parent
 
-
 The mvn-java-parent project is a maven parent project to extend for specific java projects.
 
 ## Key features:
@@ -26,8 +25,7 @@ Add as parent project in the `pom.xml` file:
 		<artifactId>mvn-java-parent</artifactId>
 		<version>2.15.0</version>
 		<relativePath></relativePath>
-	</parent>
-	
+	</parent>	
 
 ## Want to Help and improve it? ###
 
@@ -36,8 +34,6 @@ The source code for mvn-java-parent are on GitHub. Please feel free to fork and 
 Create your own fork of [lightblueseas/mvn-java-parent/fork](https://github.com/lightblueseas/mvn-java-parent/fork)
 
 To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-java-parent/pull/new/master).
-
-Don't forget to add new units tests on your changes.
 
 ## Contacting the Developers
 
