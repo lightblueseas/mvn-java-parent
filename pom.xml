@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.5.0</version>
+		<version>1.6.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>2.18.0</version>
+	<version>2.21.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -20,9 +20,9 @@
 	<description>
 		Parent project for general java projects.
 	</description>
-	
+
 	<url>https://github.com/lightblueseas/mvn-java-parent</url>
-	
+
 	<licenses>
 
 		<license>
@@ -93,6 +93,9 @@
 		<junit.version>4.12</junit.version>
 		<!-- JAVA-SEMVER versions -->
 		<java-semver.version>0.9.0</java-semver.version>
+		<!-- COM-SUN-TOOLS version -->
+		<com.sun-tools.version>1.6.0</com.sun-tools.version>
+		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
@@ -109,6 +112,7 @@
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN versions -->
 		<lombok-maven-plugin.version>1.16.12.0</lombok-maven-plugin.version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -158,6 +162,14 @@
 				<groupId>com.github.zafarkhaja</groupId>
 				<artifactId>java-semver</artifactId>
 				<version>${java-semver.version}</version>
+			</dependency>
+			<!-- COM-SUN-TOOLS DEPENDENCIES -->
+			<dependency>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+				<version>${com.sun-tools.version}</version>
+				<scope>system</scope>
+				<systemPath>${system-path-of-tools-jar}</systemPath>
 			</dependency>
 
 		</dependencies>
@@ -505,11 +517,11 @@
 			</build>
 		</profile>
 
-
 		<profile>
-			<id>delombok</id>
+			<id>delombok-src-with-ant</id>
 			<!-- This profile can generate the classes(with all getter and setter 
-				and other methods that provide lombok) that uses lombok annotations. -->
+				and other methods that provide lombok) that uses lombok annotations with 
+				the maven-antrun-plugin. -->
 			<activation>
 				<property>
 					<name>performRelease</name>
@@ -520,32 +532,159 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.projectlombok</groupId>
-						<artifactId>lombok-maven-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
 						<executions>
 							<execution>
 								<id>delombok</id>
 								<phase>generate-sources</phase>
-								<goals>
-									<goal>delombok</goal>
-								</goals>
 								<configuration>
-									<addOutputDirectory>false</addOutputDirectory>
-									<sourceDirectory>src/main/java</sourceDirectory>
+									<property environment="env" />
+									<property name="antLombokVersion" value="${lombok.version}" />
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok" />
+										<delombok verbose="true" encoding="UTF-8"
+											to="target/generated-sources/delombok" from="src/main/java">
+											<format value="suppressWarnings:skip" />
+										</delombok>
+									</target>
 								</configuration>
-							</execution>
-							<execution>
-								<id>test-delombok</id>
-								<phase>generate-test-sources</phase>
 								<goals>
-									<goal>testDelombok</goal>
+									<goal>run</goal>
 								</goals>
-								<configuration>
-									<addOutputDirectory>false</addOutputDirectory>
-									<sourceDirectory>src/test/java</sourceDirectory>
-								</configuration>
 							</execution>
 						</executions>
+						<dependencies>
+							<!-- LOMBOK DEPENDENCIES -->
+							<dependency>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+							</dependency>
+							<dependency>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+
+		</profile>
+
+		<profile>
+			<id>delombok-tests-with-ant</id>
+			<!-- This profile can generate the classes(with all getter and setter 
+				and other methods that provide lombok) that uses lombok annotations with 
+				the maven-antrun-plugin. -->
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>delombok</id>
+								<phase>generate-sources</phase>
+								<configuration>
+									<property environment="env" />
+									<property name="antLombokVersion" value="${lombok.version}" />
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok" />
+										<delombok verbose="true" encoding="UTF-8"
+											to="target/generated-sources/test-delombok" from="src/test/java">
+											<format value="suppressWarnings:skip" />
+										</delombok>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<!-- LOMBOK DEPENDENCIES -->
+							<dependency>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+							</dependency>
+							<dependency>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+
+		</profile>
+		
+		
+
+		<profile>
+			<id>delombok-src-and-tests</id>
+			<!-- This profile can generate the classes(with all getter and setter 
+				and other methods that provide lombok) that uses lombok annotations with 
+				the maven-antrun-plugin. -->
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>delombok-src</id>
+								<phase>generate-sources</phase>
+								<configuration>
+									<property environment="env" />
+									<property name="antLombokVersion" value="${lombok.version}" />
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok" />
+										<delombok verbose="true" encoding="UTF-8"
+											to="target/generated-sources/test-delombok" from="src/test/java">
+											<format value="suppressWarnings:skip" />
+										</delombok>
+										<delombok verbose="true" encoding="UTF-8"
+											to="target/generated-sources/delombok" from="src/main/java">
+											<format value="suppressWarnings:skip" />
+										</delombok>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<!-- LOMBOK DEPENDENCIES -->
+							<dependency>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+							</dependency>
+							<dependency>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+							</dependency>
+						</dependencies>
 					</plugin>
 				</plugins>
 			</build>
