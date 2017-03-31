@@ -285,6 +285,8 @@
 							<exclude>**/*.dtd</exclude>
 							<exclude>**/*.html</exclude>
 							<exclude>**/*.jsp</exclude>
+							<exclude>**/*.jpa</exclude>
+							<exclude>**/*.sql</exclude>
 							<exclude>**/*.properties</exclude>
 							<exclude>**/*.bat</exclude>
 							<exclude>**/*.gradle</exclude>
