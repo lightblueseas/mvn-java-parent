@@ -284,6 +284,7 @@
 							<exclude>**/*.xsd</exclude>
 							<exclude>**/*.dtd</exclude>
 							<exclude>**/*.html</exclude>
+							<exclude>**/*.jsp</exclude>
 							<exclude>**/*.properties</exclude>
 							<exclude>**/*.bat</exclude>
 							<exclude>**/*.gradle</exclude>
