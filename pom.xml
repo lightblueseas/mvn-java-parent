@@ -89,7 +89,7 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<log4j.version>1.2.16</log4j.version>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.10</testng.version>
+		<testng.version>6.11</testng.version>
 		<junit.version>4.12</junit.version>
 		<!-- JAVA-SEMVER versions -->
 		<java-semver.version>0.9.0</java-semver.version>
