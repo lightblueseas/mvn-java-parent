@@ -297,6 +297,8 @@
 							<exclude>**/*.log</exclude>
 							<exclude>**/*.map</exclude>
 							<exclude>**/*.js.map</exclude>
+							<exclude>**/*.tmpl</exclude>
+							<exclude>**/*.js.tmpl</exclude>
 							<exclude>**/*.editorconfig</exclude>
 							<exclude>src/test/resources/**</exclude>
 							<exclude>src/main/resources/**</exclude>
