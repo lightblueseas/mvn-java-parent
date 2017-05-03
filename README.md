@@ -1,4 +1,4 @@
-# mvn-java-parent
+# Overview
 
 The mvn-java-parent project is a maven parent project to extend for specific java projects.
 
@@ -12,6 +12,10 @@ The mvn-java-parent project is a maven parent project to extend for specific jav
 
 The source code comes under the liberal Apache License V2.0, making mvn-java-parent great for all types of java applications.
 
+# Build status
+
+[![Build Status](https://travis-ci.org/lightblueseas/mvn-java-parent.svg?branch=master)](https://travis-ci.org/lightblueseas/mvn-java-parent)
+
 ## Maven Central
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent)
@@ -19,13 +23,17 @@ The source code comes under the liberal Apache License V2.0, making mvn-java-par
 ## How to use it
 
 Add as parent project in the `pom.xml` file:
-
+```xml
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
 		<version>2.24.0</version>
 		<relativePath></relativePath>
 	</parent>	
+```
+
+## Open Issues
+[![Open Issues](https://img.shields.io/github/issues/lightblueseas/mvn-java-parent.svg?style=flat)](https://github.com/lightblueseas/mvn-java-parent/issues) 
 
 ## Want to Help and improve it? ###
 
