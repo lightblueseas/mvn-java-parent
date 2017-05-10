@@ -96,6 +96,8 @@
 		<!-- COM-SUN-TOOLS version -->
 		<com.sun-tools.version>1.5.0</com.sun-tools.version>
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
+		<!-- JSR305 LIB version -->
+		<jsr305.version>3.0.2</jsr305.version>
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
@@ -170,6 +172,12 @@
 				<version>${com.sun-tools.version}</version>
 				<scope>system</scope>
 				<systemPath>${system-path-of-tools-jar}</systemPath>
+			</dependency>
+			<!-- JSR305 DEPENDENCY -->
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${jsr305.version}</version>
 			</dependency>
 
 		</dependencies>
