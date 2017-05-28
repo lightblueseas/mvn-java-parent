@@ -105,6 +105,7 @@
 		<!-- COVERAGE-MAVEN-PLUGIN versions -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
 		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN versions -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
@@ -349,6 +350,12 @@
 						<!-- aggregated reports for multi-module projects -->
 						<aggregate>true</aggregate>
 					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
 				</plugin>
 
 				<plugin>
