@@ -1,0 +1,12 @@
+# mvn-java-parent .travis.yml
+
+language: java
+
+jdk:
+    - oraclejdk8
+
+notifications:
+    email:
+        recipients:
+            - asterios.raptis@gmx.net
+        on_failure: always
