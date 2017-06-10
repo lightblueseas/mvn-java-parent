@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.8.0</version>
+		<version>1.9.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>2.24.0</version>
+	<version>2.25.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -96,6 +96,8 @@
 		<!-- COM-SUN-TOOLS version -->
 		<com.sun-tools.version>1.5.0</com.sun-tools.version>
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
+		<!-- JSR305 LIB version -->
+		<jsr305.version>3.0.2</jsr305.version>
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
@@ -103,6 +105,7 @@
 		<!-- COVERAGE-MAVEN-PLUGIN versions -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
 		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN versions -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
@@ -170,6 +173,12 @@
 				<version>${com.sun-tools.version}</version>
 				<scope>system</scope>
 				<systemPath>${system-path-of-tools-jar}</systemPath>
+			</dependency>
+			<!-- JSR305 DEPENDENCY -->
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${jsr305.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -341,6 +350,12 @@
 						<!-- aggregated reports for multi-module projects -->
 						<aggregate>true</aggregate>
 					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
 				</plugin>
 
 				<plugin>
