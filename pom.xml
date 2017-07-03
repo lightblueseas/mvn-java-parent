@@ -309,6 +309,7 @@
 							<exclude>**/*.tmpl</exclude>
 							<exclude>**/*.js.tmpl</exclude>
 							<exclude>**/*.editorconfig</exclude>
+							<exclude>**/*.versionsBackup</exclude>
 							<exclude>src/test/resources/**</exclude>
 							<exclude>src/main/resources/**</exclude>
 						</excludes>
@@ -351,7 +352,7 @@
 						<aggregate>true</aggregate>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
