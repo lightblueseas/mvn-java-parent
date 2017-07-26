@@ -98,6 +98,8 @@
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- JSR305 LIB version -->
 		<jsr305.version>3.0.2</jsr305.version>
+		<!-- JSR250-API LIB version -->
+		<jsr250-api.version>1.0</jsr250-api.version>
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
@@ -179,6 +181,12 @@
 				<groupId>com.google.code.findbugs</groupId>
 				<artifactId>jsr305</artifactId>
 				<version>${jsr305.version}</version>
+			</dependency>
+			<!-- JSR250-API DEPENDENCIES -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>jsr250-api</artifactId>
+				<version>${jsr250-api.version}</version>
 			</dependency>
 
 		</dependencies>
