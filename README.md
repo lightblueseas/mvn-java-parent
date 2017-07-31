@@ -41,7 +41,7 @@ The source code for mvn-java-parent are on GitHub. Please feel free to fork and 
 
 Create your own fork of [lightblueseas/mvn-java-parent/fork](https://github.com/lightblueseas/mvn-java-parent/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-java-parent/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-java-parent/pull/new/develop).
 
 ## Contacting the Developers
 
