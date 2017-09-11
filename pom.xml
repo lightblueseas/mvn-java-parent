@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.10.0</version>
+		<version>1.12.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>2.26.0</version>
+	<version>2.28.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -84,7 +84,7 @@
 
 	<properties>
 		<!-- LOMBOK version -->
-		<lombok.version>1.16.16</lombok.version>
+		<lombok.version>1.16.18</lombok.version>
 		<!-- LOGGING versions -->
 		<slf4j.version>1.6.4</slf4j.version>
 		<log4j.version>1.2.16</log4j.version>
@@ -94,27 +94,29 @@
 		<!-- JAVA-SEMVER versions -->
 		<java-semver.version>0.9.0</java-semver.version>
 		<!-- COM-SUN-TOOLS version -->
-		<com.sun-tools.version>1.5.0</com.sun-tools.version>
+		<com.sun-tools.version>1.7.0.13</com.sun-tools.version>
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- JSR305 LIB version -->
 		<jsr305.version>3.0.2</jsr305.version>
+		<!-- JSR250-API LIB version -->
+		<jsr250-api.version>1.0</jsr250-api.version>
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN versions -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
-		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN versions -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 		<!-- EXEC-MAVEN-PLUGIN versions -->
-		<exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
+		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
 		<!-- MAVEN-ANTRUN-PLUGIN versions -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN versions -->
-		<lombok-maven-plugin.version>1.16.16.0</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
 
 	</properties>
 
@@ -179,6 +181,12 @@
 				<groupId>com.google.code.findbugs</groupId>
 				<artifactId>jsr305</artifactId>
 				<version>${jsr305.version}</version>
+			</dependency>
+			<!-- JSR250-API DEPENDENCIES -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>jsr250-api</artifactId>
+				<version>${jsr250-api.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -309,6 +317,7 @@
 							<exclude>**/*.tmpl</exclude>
 							<exclude>**/*.js.tmpl</exclude>
 							<exclude>**/*.editorconfig</exclude>
+							<exclude>**/*.versionsBackup</exclude>
 							<exclude>src/test/resources/**</exclude>
 							<exclude>src/main/resources/**</exclude>
 						</excludes>
@@ -351,7 +360,7 @@
 						<aggregate>true</aggregate>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
