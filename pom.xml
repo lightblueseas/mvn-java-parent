@@ -116,7 +116,7 @@
 		<!-- MAVEN-ANTRUN-PLUGIN versions -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN versions -->
-		<lombok-maven-plugin.version>1.16.18.0</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
 
 	</properties>
 
