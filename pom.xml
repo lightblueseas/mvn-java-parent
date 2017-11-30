@@ -278,6 +278,7 @@
 							<exclude>**/LICENSE</exclude>
 							<exclude>**/NOTICE</exclude>
 							<exclude>**/pom.xml</exclude>
+							<exclude>**/pom.xml.bak</exclude>
 							<exclude>**/*.xml</exclude>
 							<exclude>**/*.xsl</exclude>
 							<exclude>**/*.xsd</exclude>
