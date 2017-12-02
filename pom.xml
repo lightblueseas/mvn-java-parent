@@ -1,17 +1,16 @@
-<?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.14.0</version>
+		<version>1.17.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>2.30.0</version>
+	<version>3.2.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -23,71 +22,12 @@
 
 	<url>https://github.com/lightblueseas/mvn-java-parent</url>
 
-	<licenses>
-
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-
-	</licenses>
-
-	<developers>
-
-		<developer>
-			<id>astrapi69</id>
-			<name>Asterios Raptis</name>
-			<email>astrapi69 at users.sf.net</email>
-			<timezone>Berlin</timezone>
-			<roles>
-				<role>Project manager</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-
-	</developers>
-
-	<organization>
-		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
-		<url>http://www.alpharogroup.de/</url>
-	</organization>
-
-	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/mvn-java-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-java-parent.git</developerConnection>
-		<url>git:@github.com:lightblueseas/mvn-java-parent.git</url>
-	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/mvn-java-parent</url>
-	</ciManagement>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/lightblueseas/mvn-java-parent/issues</url>
-	</issueManagement>
-
 	<properties>
 		<!-- LOMBOK version -->
 		<lombok.version>1.16.18</lombok.version>
 		<!-- LOGGING versions -->
-		<slf4j.version>1.6.4</slf4j.version>
-		<log4j.version>1.2.16</log4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<log4j.version>2.9.0</log4j.version>
 		<!-- UNIT TEST versions -->
 		<testng.version>6.11</testng.version>
 		<junit.version>4.12</junit.version>
@@ -103,7 +43,7 @@
 		<!-- LICENSE-MAVEN-PLUGIN versions -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
-		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN versions -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
@@ -120,6 +60,22 @@
 
 	</properties>
 
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/mvn-java-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-java-parent.git</developerConnection>
+		<url>git:@github.com:lightblueseas/mvn-java-parent.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/mvn-java-parent/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/mvn-java-parent</url>
+	</ciManagement>
+
 	<dependencyManagement>
 
 		<dependencies>
@@ -131,6 +87,13 @@
 				<version>${lombok.version}</version>
 			</dependency>
 			<!-- LOGGING DEPENDENCIES -->
+			<!-- SLF4J DEPENDENCIES -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
@@ -139,15 +102,26 @@
 
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
+				<artifactId>slf4j-ext</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<!-- LOG4J DEPENDENCIES -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
 				<version>${log4j.version}</version>
-				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
 			</dependency>
 			<!-- UNIT DEPENDENCIES FOR TESTING -->
 			<!-- JUNIT DEPENDENCY -->
@@ -168,14 +142,6 @@
 				<artifactId>java-semver</artifactId>
 				<version>${java-semver.version}</version>
 			</dependency>
-			<!-- COM-SUN-TOOLS DEPENDENCIES -->
-			<dependency>
-				<groupId>com.sun</groupId>
-				<artifactId>tools</artifactId>
-				<version>${com.sun-tools.version}</version>
-				<scope>system</scope>
-				<systemPath>${system-path-of-tools-jar}</systemPath>
-			</dependency>
 			<!-- JSR305 DEPENDENCY -->
 			<dependency>
 				<groupId>com.google.code.findbugs</groupId>
@@ -187,6 +153,14 @@
 				<groupId>javax.annotation</groupId>
 				<artifactId>jsr250-api</artifactId>
 				<version>${jsr250-api.version}</version>
+			</dependency>
+			<!-- COM-SUN-TOOLS DEPENDENCIES -->
+			<dependency>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+				<version>${com.sun-tools.version}</version>
+				<scope>system</scope>
+				<systemPath>${system-path-of-tools-jar}</systemPath>
 			</dependency>
 
 		</dependencies>
@@ -200,19 +174,25 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<!-- LOGGING DEPENDENCIES -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-
+		<!-- SLF4J DEPENDENCIES -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
-		<!-- LOGGING DEPENDENCIES - LOG4J -->
+
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<!-- LOG4J DEPENDENCIES -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 		<!-- UNIT TESTS DEPENDENCIES -->
 		<dependency>
@@ -297,6 +277,7 @@
 							<exclude>**/LICENSE</exclude>
 							<exclude>**/NOTICE</exclude>
 							<exclude>**/pom.xml</exclude>
+							<exclude>**/pom.xml.bak</exclude>
 							<exclude>**/*.xml</exclude>
 							<exclude>**/*.xsl</exclude>
 							<exclude>**/*.xsd</exclude>
@@ -535,28 +516,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>delombok</id>
-								<phase>generate-sources</phase>
-								<configuration>
-									<property environment="env" />
-									<property name="antLombokVersion" value="${lombok.version}" />
-									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
-											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
-											name="delombok" />
-										<delombok verbose="true" encoding="UTF-8"
-											to="target/generated-sources/delombok" from="src/main/java">
-											<format value="suppressWarnings:skip" />
-										</delombok>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
 						<dependencies>
 							<!-- LOMBOK DEPENDENCIES -->
 							<dependency>
@@ -572,6 +531,28 @@
 								<systemPath>${system-path-of-tools-jar}</systemPath>
 							</dependency>
 						</dependencies>
+						<executions>
+							<execution>
+								<id>delombok</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<property environment="env"></property>
+									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok"></taskdef>
+										<delombok encoding="UTF-8" from="src/main/java"
+											to="target/generated-sources/delombok" verbose="true">
+											<format value="suppressWarnings:skip"></format>
+										</delombok>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
@@ -595,28 +576,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>delombok</id>
-								<phase>generate-sources</phase>
-								<configuration>
-									<property environment="env" />
-									<property name="antLombokVersion" value="${lombok.version}" />
-									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
-											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
-											name="delombok" />
-										<delombok verbose="true" encoding="UTF-8"
-											to="target/generated-sources/test-delombok" from="src/test/java">
-											<format value="suppressWarnings:skip" />
-										</delombok>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
 						<dependencies>
 							<!-- LOMBOK DEPENDENCIES -->
 							<dependency>
@@ -632,6 +591,28 @@
 								<systemPath>${system-path-of-tools-jar}</systemPath>
 							</dependency>
 						</dependencies>
+						<executions>
+							<execution>
+								<id>delombok</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<property environment="env"></property>
+									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok"></taskdef>
+										<delombok encoding="UTF-8" from="src/test/java"
+											to="target/generated-sources/test-delombok" verbose="true">
+											<format value="suppressWarnings:skip"></format>
+										</delombok>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
