@@ -1,17 +1,16 @@
-<?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.15.0</version>
+		<version>1.17.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.2.0-SNAPSHOT</version>
+	<version>3.2.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -22,22 +21,6 @@
 	</description>
 
 	<url>https://github.com/lightblueseas/mvn-java-parent</url>
-
-	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/mvn-java-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-java-parent.git</developerConnection>
-		<url>git:@github.com:lightblueseas/mvn-java-parent.git</url>
-	</scm>
-
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/mvn-java-parent</url>
-	</ciManagement>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/lightblueseas/mvn-java-parent/issues</url>
-	</issueManagement>
 
 	<properties>
 		<!-- LOMBOK version -->
@@ -76,6 +59,22 @@
 		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
 
 	</properties>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/mvn-java-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-java-parent.git</developerConnection>
+		<url>git:@github.com:lightblueseas/mvn-java-parent.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/mvn-java-parent/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/mvn-java-parent</url>
+	</ciManagement>
 
 	<dependencyManagement>
 
@@ -143,14 +142,6 @@
 				<artifactId>java-semver</artifactId>
 				<version>${java-semver.version}</version>
 			</dependency>
-			<!-- COM-SUN-TOOLS DEPENDENCIES -->
-			<dependency>
-				<groupId>com.sun</groupId>
-				<artifactId>tools</artifactId>
-				<version>${com.sun-tools.version}</version>
-				<scope>system</scope>
-				<systemPath>${system-path-of-tools-jar}</systemPath>
-			</dependency>
 			<!-- JSR305 DEPENDENCY -->
 			<dependency>
 				<groupId>com.google.code.findbugs</groupId>
@@ -162,6 +153,14 @@
 				<groupId>javax.annotation</groupId>
 				<artifactId>jsr250-api</artifactId>
 				<version>${jsr250-api.version}</version>
+			</dependency>
+			<!-- COM-SUN-TOOLS DEPENDENCIES -->
+			<dependency>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+				<version>${com.sun-tools.version}</version>
+				<scope>system</scope>
+				<systemPath>${system-path-of-tools-jar}</systemPath>
 			</dependency>
 
 		</dependencies>
@@ -517,28 +516,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>delombok</id>
-								<phase>generate-sources</phase>
-								<configuration>
-									<property environment="env" />
-									<property name="antLombokVersion" value="${lombok.version}" />
-									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
-											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
-											name="delombok" />
-										<delombok verbose="true" encoding="UTF-8"
-											to="target/generated-sources/delombok" from="src/main/java">
-											<format value="suppressWarnings:skip" />
-										</delombok>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
 						<dependencies>
 							<!-- LOMBOK DEPENDENCIES -->
 							<dependency>
@@ -554,6 +531,28 @@
 								<systemPath>${system-path-of-tools-jar}</systemPath>
 							</dependency>
 						</dependencies>
+						<executions>
+							<execution>
+								<id>delombok</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<property environment="env"></property>
+									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok"></taskdef>
+										<delombok encoding="UTF-8" from="src/main/java"
+											to="target/generated-sources/delombok" verbose="true">
+											<format value="suppressWarnings:skip"></format>
+										</delombok>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
@@ -577,28 +576,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>delombok</id>
-								<phase>generate-sources</phase>
-								<configuration>
-									<property environment="env" />
-									<property name="antLombokVersion" value="${lombok.version}" />
-									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
-											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
-											name="delombok" />
-										<delombok verbose="true" encoding="UTF-8"
-											to="target/generated-sources/test-delombok" from="src/test/java">
-											<format value="suppressWarnings:skip" />
-										</delombok>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
 						<dependencies>
 							<!-- LOMBOK DEPENDENCIES -->
 							<dependency>
@@ -614,6 +591,28 @@
 								<systemPath>${system-path-of-tools-jar}</systemPath>
 							</dependency>
 						</dependencies>
+						<executions>
+							<execution>
+								<id>delombok</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<property environment="env"></property>
+									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<target name="javadoc">
+										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
+											name="delombok"></taskdef>
+										<delombok encoding="UTF-8" from="src/test/java"
+											to="target/generated-sources/test-delombok" verbose="true">
+											<format value="suppressWarnings:skip"></format>
+										</delombok>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
