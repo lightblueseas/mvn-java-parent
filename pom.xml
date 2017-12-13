@@ -620,16 +620,18 @@
 		</profile>
 
 		<profile>
-			<id>code-coverage-cobertura-reporting</id>
+			<id>code-coverage-cobertura-html-reporting</id>
 			<activation>
 				<property>
 					<name>performRelease</name>
 					<value>true</value>
 				</property>
 			</activation>
-			
-			<reporting>
+
+			<build>
+
 				<plugins>
+
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>cobertura-maven-plugin</artifactId>
@@ -640,7 +642,33 @@
 							<aggregate>true</aggregate>
 						</configuration>
 					</plugin>
+
+					<plugin>
+						<groupId>org.eluder.coveralls</groupId>
+						<artifactId>coveralls-maven-plugin</artifactId>
+					</plugin>
+
 				</plugins>
+
+			</build>
+
+			<reporting>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<configuration>
+							<format>html</format>
+							<maxmem>512m</maxmem>
+							<!-- aggregated reports for multi-module projects -->
+							<aggregate>true</aggregate>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
 			</reporting>
 
 		</profile>
