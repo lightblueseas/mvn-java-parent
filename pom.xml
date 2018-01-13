@@ -31,32 +31,34 @@
 		<!-- UNIT TEST versions -->
 		<testng.version>6.13.1</testng.version>
 		<junit.version>4.12</junit.version>
-		<!-- JAVA-SEMVER versions -->
+		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
-		<!-- COM-SUN-TOOLS version -->
+		<!-- COM-SUN-TOOLS versions -->
 		<com.sun-tools.version>1.7.0.13</com.sun-tools.version>
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- JSR305 LIB version -->
 		<jsr305.version>3.0.2</jsr305.version>
 		<!-- JSR250-API LIB version -->
 		<jsr250-api.version>1.0</jsr250-api.version>
-		<!-- LICENSE-MAVEN-PLUGIN versions -->
+		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
-		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
+		<!-- MAVEN-SUREFIRE-PLUGIN version -->
 		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-		<!-- COVERAGE-MAVEN-PLUGIN versions -->
+		<!-- COVERAGE-MAVEN-PLUGIN version -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
 		<maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
-		<!-- PROPERTIES-MAVEN-PLUGIN versions -->
+		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-		<!-- EXEC-MAVEN-PLUGIN versions -->
+		<!-- EXEC-MAVEN-PLUGIN version -->
 		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-		<!-- MAVEN-ANTRUN-PLUGIN versions -->
+		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-		<!-- LOMBOK-MAVEN-PLUGIN versions -->
+		<!-- LOMBOK-MAVEN-PLUGIN version -->
 		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
+		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
+		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
 
 	</properties>
 
@@ -388,6 +390,12 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-toolchains-plugin</artifactId>
+					<version>${maven-toolchains-plugin.version}</version>
 				</plugin>
 
 			</plugins>
