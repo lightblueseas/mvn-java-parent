@@ -11,4 +11,5 @@ ADDED:
 
 CHANGED:
 
-- update of parent version
+- update of parent version to 1.19.0
+- update of lombok version to 1.16.20
