@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 3.6.0
+-------------
+
+ADDED:
+
+- mockito-core in version 2.13.0 added for object mocking 
+- new icon area to the top of the README.md
+
 Version 3.5.0
 -------------
 

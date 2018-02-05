@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.5.0</version>
+	<version>3.6.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -31,6 +31,7 @@
 		<!-- UNIT TEST versions -->
 		<testng.version>6.13.1</testng.version>
 		<junit.version>4.12</junit.version>
+		<mockito-core.version>2.13.0</mockito-core.version>
 		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
 		<!-- COM-SUN-TOOLS versions -->
@@ -138,6 +139,12 @@
 				<artifactId>testng</artifactId>
 				<version>${testng.version}</version>
 			</dependency>
+			<!-- MOCKITO DEPENDENCY -->
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito-core.version}</version>
+			</dependency>
 			<!-- JAVA-SEMVER DEPENDENCIES -->
 			<dependency>
 				<groupId>com.github.zafarkhaja</groupId>
@@ -205,6 +212,12 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- MOCKITO DEPENDENCY -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
 
