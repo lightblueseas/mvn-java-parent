@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.6.0</version>
+	<version>3.7.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -29,9 +29,9 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<log4j.version>2.10.0</log4j.version>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.13.1</testng.version>
+		<testng.version>6.14.2</testng.version>
 		<junit.version>4.12</junit.version>
-		<mockito-core.version>2.13.0</mockito-core.version>
+		<mockito-core.version>2.15.0</mockito-core.version>
 		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
 		<!-- COM-SUN-TOOLS versions -->
@@ -57,7 +57,7 @@
 		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN version -->
-		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.16.20.0</lombok-maven-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
 		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
 

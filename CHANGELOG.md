@@ -1,6 +1,15 @@
 ## Change log
 ----------------------
 
+Version 3.7.0
+-------------
+
+CHANGED:
+
+- update of testng dependency version from 6.13.1 to 6.14.2
+- update of mockito-core dependency version from 2.13.0 to 2.15.0
+- update of lombok-maven-plugin dependency version from 1.16.18.1 to 1.16.20.0
+
 Version 3.6.0
 -------------
 
