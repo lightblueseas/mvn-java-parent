@@ -4,6 +4,10 @@
 Version 3.7.0-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of testng dependency version from 6.13.1 to 6.14.2
+- update of lombok-maven-plugin dependency version from 1.16.18.1 to 1.16.20.0
 
 Version 3.6.0
 -------------
