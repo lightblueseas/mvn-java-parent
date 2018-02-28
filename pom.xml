@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.18.0</version>
+		<version>1.20.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.4.0</version>
+	<version>3.8.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -24,39 +24,44 @@
 
 	<properties>
 		<!-- LOMBOK version -->
-		<lombok.version>1.16.18</lombok.version>
+		<lombok.version>1.16.20</lombok.version>
 		<!-- LOGGING versions -->
 		<slf4j.version>1.7.25</slf4j.version>
 		<log4j.version>2.10.0</log4j.version>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.13.1</testng.version>
+		<testng.version>6.14.2</testng.version>
 		<junit.version>4.12</junit.version>
-		<!-- JAVA-SEMVER versions -->
+		<mockito-core.version>2.15.0</mockito-core.version>
+		<!-- MEANBEAN version -->
+		<meanbean.version>2.0.3</meanbean.version>
+		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
-		<!-- COM-SUN-TOOLS version -->
+		<!-- COM-SUN-TOOLS versions -->
 		<com.sun-tools.version>1.7.0.13</com.sun-tools.version>
 		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- JSR305 LIB version -->
 		<jsr305.version>3.0.2</jsr305.version>
 		<!-- JSR250-API LIB version -->
 		<jsr250-api.version>1.0</jsr250-api.version>
-		<!-- LICENSE-MAVEN-PLUGIN versions -->
+		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
-		<!-- MAVEN-SUREFIRE-PLUGIN versions -->
+		<!-- MAVEN-SUREFIRE-PLUGIN version -->
 		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-		<!-- COVERAGE-MAVEN-PLUGIN versions -->
+		<!-- COVERAGE-MAVEN-PLUGIN version -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
 		<maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
-		<!-- PROPERTIES-MAVEN-PLUGIN versions -->
+		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-		<!-- EXEC-MAVEN-PLUGIN versions -->
+		<!-- EXEC-MAVEN-PLUGIN version -->
 		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-		<!-- MAVEN-ANTRUN-PLUGIN versions -->
+		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-		<!-- LOMBOK-MAVEN-PLUGIN versions -->
-		<lombok-maven-plugin.version>1.16.18.1</lombok-maven-plugin.version>
+		<!-- LOMBOK-MAVEN-PLUGIN version -->
+		<lombok-maven-plugin.version>1.16.20.0</lombok-maven-plugin.version>
+		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
+		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
 
 	</properties>
 
@@ -136,6 +141,18 @@
 				<artifactId>testng</artifactId>
 				<version>${testng.version}</version>
 			</dependency>
+			<!-- MOCKITO DEPENDENCY -->
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito-core.version}</version>
+			</dependency>
+			<!-- MEANBEAN DEPENDENCY -->
+			<dependency>
+				<groupId>org.meanbean</groupId>
+				<artifactId>meanbean</artifactId>
+				<version>${meanbean.version}</version>
+			</dependency>
 			<!-- JAVA-SEMVER DEPENDENCIES -->
 			<dependency>
 				<groupId>com.github.zafarkhaja</groupId>
@@ -203,6 +220,12 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- MOCKITO DEPENDENCY -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -388,6 +411,12 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-toolchains-plugin</artifactId>
+					<version>${maven-toolchains-plugin.version}</version>
 				</plugin>
 
 			</plugins>
