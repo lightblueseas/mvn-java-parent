@@ -4,6 +4,13 @@
 Version 3.8.0-SNAPSHOT
 -------------
 
+ADDED:
+
+- meanbean dependency in version 2.0.3 added for bean object unit tests 
+
+CHANGED:
+
+- update of parent version to 1.20.0
 
 Version 3.7.0
 -------------

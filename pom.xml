@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.19.0</version>
+		<version>1.20.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.8.0-SNAPSHOT</version>
+	<version>3.8.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -32,6 +32,8 @@
 		<testng.version>6.14.2</testng.version>
 		<junit.version>4.12</junit.version>
 		<mockito-core.version>2.15.0</mockito-core.version>
+		<!-- MEANBEAN version -->
+		<meanbean.version>2.0.3</meanbean.version>
 		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
 		<!-- COM-SUN-TOOLS versions -->
@@ -144,6 +146,12 @@
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-core</artifactId>
 				<version>${mockito-core.version}</version>
+			</dependency>
+			<!-- MEANBEAN DEPENDENCY -->
+			<dependency>
+				<groupId>org.meanbean</groupId>
+				<artifactId>meanbean</artifactId>
+				<version>${meanbean.version}</version>
 			</dependency>
 			<!-- JAVA-SEMVER DEPENDENCIES -->
 			<dependency>
