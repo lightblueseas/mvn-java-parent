@@ -1,7 +1,14 @@
 ## Change log
 ----------------------
 
-Version 3.8.0-SNAPSHOT
+Version 3.9.0
+-------------
+
+ADDED:
+
+- random-beans dependency in version 3.7.0 added for create random bean objects in unit tests
+
+Version 3.8.0
 -------------
 
 ADDED:

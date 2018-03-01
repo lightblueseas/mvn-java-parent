@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.8.0</version>
+	<version>3.9.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -34,6 +34,8 @@
 		<mockito-core.version>2.15.0</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
+		<!-- RANDOM-BEANS version -->
+		<random-beans.version>3.7.0</random-beans.version>
 		<!-- JAVA-SEMVER version -->
 		<java-semver.version>0.9.0</java-semver.version>
 		<!-- COM-SUN-TOOLS versions -->
@@ -152,6 +154,12 @@
 				<groupId>org.meanbean</groupId>
 				<artifactId>meanbean</artifactId>
 				<version>${meanbean.version}</version>
+			</dependency>
+			<!-- RANDOM-BEANS DEPENDENCY -->
+			<dependency>
+				<groupId>io.github.benas</groupId>
+				<artifactId>random-beans</artifactId>
+				<version>${random-beans.version}</version>
 			</dependency>
 			<!-- JAVA-SEMVER DEPENDENCIES -->
 			<dependency>
