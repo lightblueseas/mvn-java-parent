@@ -4,6 +4,9 @@
 Version 3.10.0-SNAPSHOT
 -------------
 
+ADDED:
+
+- meanbean-factories dependency in version 1.0.0 added for bean object unit tests 
 
 Version 3.9.0
 -------------
