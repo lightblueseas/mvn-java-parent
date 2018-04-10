@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.20.0</version>
+		<version>1.21.0</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.9.0</version>
+	<version>3.10.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -27,13 +27,15 @@
 		<lombok.version>1.16.20</lombok.version>
 		<!-- LOGGING versions -->
 		<slf4j.version>1.7.25</slf4j.version>
-		<log4j.version>2.10.0</log4j.version>
+		<log4j.version>2.11.0</log4j.version>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.14.2</testng.version>
+		<testng.version>6.14.3</testng.version>
 		<junit.version>4.12</junit.version>
-		<mockito-core.version>2.15.0</mockito-core.version>
+		<mockito-core.version>2.18.0</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
+		<!-- MEANBEAN-FACTORIES version -->
+		<meanbean-factories.version>1.0.0</meanbean-factories.version>
 		<!-- RANDOM-BEANS version -->
 		<random-beans.version>3.7.0</random-beans.version>
 		<!-- JAVA-SEMVER version -->
@@ -48,12 +50,12 @@
 		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN version -->
-		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN version -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
-		<maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
+		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
+		<maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 		<!-- EXEC-MAVEN-PLUGIN version -->
@@ -154,6 +156,12 @@
 				<groupId>org.meanbean</groupId>
 				<artifactId>meanbean</artifactId>
 				<version>${meanbean.version}</version>
+			</dependency>
+			<!-- MEANBEAN-FACTORIES DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>meanbean-factories</artifactId>
+				<version>${meanbean-factories.version}</version>
 			</dependency>
 			<!-- RANDOM-BEANS DEPENDENCY -->
 			<dependency>

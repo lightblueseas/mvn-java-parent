@@ -1,6 +1,23 @@
 ## Change log
 ----------------------
 
+Version 3.10.0
+-------------
+
+ADDED:
+
+- meanbean-factories dependency in version 1.0.0 added for bean object unit tests 
+
+CHANGED:
+
+- update of parent version to 1.21.0
+- update of testng dependency version from 6.14.2 to 6.14.3
+- update of log4j dependency version from 2.10.0 to 2.11.0
+- update of mockito-core dependency version from 2.15.0 to 2.18.0
+- update of maven-surefire-plugin dependency version from 2.20.1 to 2.21.0
+- update of jacoco-maven-plugin dependency version from 0.7.9 to 0.8.1
+- update of maven-pmd-plugin dependency version from 3.8 to 3.9.0
+
 Version 3.9.0
 -------------
 
