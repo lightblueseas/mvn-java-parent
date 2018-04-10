@@ -28,7 +28,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.9.0</version>
+		<version>3.10.0</version>
 		<relativePath></relativePath>
 	</parent>	
 ```
