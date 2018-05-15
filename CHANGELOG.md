@@ -1,9 +1,14 @@
 ## Change log
 ----------------------
 
-Version 3.11.0-SNAPSHOT
+Version 3.11
 -------------
 
+CHANGED:
+
+- update of parent version to 1.22
+- removed unneeded .0 at the end of version
+- update of mockito-core dependency version from 2.18.0 to 2.18.3
 
 
 Version 3.10.0
