@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.11</version>
+	<version>3.12-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
