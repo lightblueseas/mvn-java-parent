@@ -1,6 +1,17 @@
 ## Change log
 ----------------------
 
+Version 3.12
+-------------
+
+CHANGED:
+
+- update of parent version to 1.23
+- update of lombok version to 1.18.0
+- update of mockito-core dependency version from 2.18.3 to 2.19.0
+- update of lombok-maven-plugin dependency version from 1.16.20.0 to 1.18.0.0
+- update of maven-pmd-plugin dependency version from 3.9.0 to 3.10.0
+
 Version 3.11
 -------------
 
