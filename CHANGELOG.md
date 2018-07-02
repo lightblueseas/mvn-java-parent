@@ -4,6 +4,10 @@
 Version 4-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of meanbean-factories dependency version from 1.0.0 to 1.1
+
 Version 3.12
 -------------
 
