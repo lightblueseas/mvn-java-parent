@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.23</version>
+		<version>1.24</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>3.12</version>
+	<version>4</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -31,11 +31,11 @@
 		<!-- UNIT TEST versions -->
 		<testng.version>6.14.3</testng.version>
 		<junit.version>4.12</junit.version>
-		<mockito-core.version>2.19.0</mockito-core.version>
+		<mockito-core.version>2.19.1</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
 		<!-- MEANBEAN-FACTORIES version -->
-		<meanbean-factories.version>1.0.0</meanbean-factories.version>
+		<meanbean-factories.version>1.1</meanbean-factories.version>
 		<!-- RANDOM-BEANS version -->
 		<random-beans.version>3.7.0</random-beans.version>
 		<!-- JAVA-SEMVER version -->
@@ -47,25 +47,29 @@
 		<jsr305.version>3.0.2</jsr305.version>
 		<!-- JSR250-API LIB version -->
 		<jsr250-api.version>1.0</jsr250-api.version>
-		<!-- LICENSE-MAVEN-PLUGIN version -->
-		<license-maven-plugin.version>3.0</license-maven-plugin.version>
-		<!-- MAVEN-SUREFIRE-PLUGIN version -->
-		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
-		<!-- COVERAGE-MAVEN-PLUGIN version -->
-		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
-		<maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
-		<!-- PROPERTIES-MAVEN-PLUGIN version -->
-		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-		<!-- EXEC-MAVEN-PLUGIN version -->
-		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+		<!-- MAVEN PLUGIN versions -->
 		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-		<!-- LOMBOK-MAVEN-PLUGIN version -->
-		<lombok-maven-plugin.version>1.18.0.0</lombok-maven-plugin.version>
+		<!-- MAVEN-PMD-PLUGIN version -->
+		<maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
+		<!-- MAVEN-SUREFIRE-PLUGIN version -->
+		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
 		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
+		<!-- COBERTURA-MAVEN-PLUGIN version -->
+		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+		<!-- COVERAGE-MAVEN-PLUGIN version -->
+		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
+		<!-- EXEC-MAVEN-PLUGIN version -->
+		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+		<!-- JACOCO-MAVEN-PLUGIN version -->
+		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
+		<!-- LICENSE-MAVEN-PLUGIN version -->
+		<license-maven-plugin.version>3.0</license-maven-plugin.version>
+		<!-- LOMBOK-MAVEN-PLUGIN version -->
+		<lombok-maven-plugin.version>1.18.0.0</lombok-maven-plugin.version>
+		<!-- PROPERTIES-MAVEN-PLUGIN version -->
+		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 
 	</properties>
 

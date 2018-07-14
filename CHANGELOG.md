@@ -1,6 +1,16 @@
 ## Change log
 ----------------------
 
+Version 4
+-------------
+
+CHANGED:
+
+- update of parent version to 1.24
+- update of meanbean-factories dependency version from 1.0.0 to 1.1
+- update of mockito-core dependency version from 2.19.0 to 2.19.1
+- update of maven-surefire-plugin dependency version from 2.21.0 to 2.22.0
+
 Version 3.12
 -------------
 

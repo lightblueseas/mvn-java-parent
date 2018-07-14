@@ -28,10 +28,21 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.12</version>
+		<version>4</version>
 		<relativePath></relativePath>
 	</parent>	
 ```
+
+## Semantic Versioning
+
+The versions of mvn-java-parent are maintained with the Semantic Versioning guidelines.
+
+Release version numbers will be incremented in the following format:
+
+`<major>.<minor>.<patch>`
+
+For detailed information on versioning you can visit the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
+	
 
 ## Want to Help and improve it? ###
 
