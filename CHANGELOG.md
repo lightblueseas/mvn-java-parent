@@ -1,9 +1,13 @@
 ## Change log
 ----------------------
 
-Version 4.1-SNAPSHOT
+Version 4.1
 -------------
 
+CHANGED:
+
+- update of lombok version to 1.18.2
+- update of mockito-core dependency version from 2.19.1 to 2.20.1
 
 Version 4
 -------------
