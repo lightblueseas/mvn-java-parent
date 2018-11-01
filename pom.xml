@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>4.1</version>
+	<version>4.2</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -24,14 +24,14 @@
 
 	<properties>
 		<!-- LOMBOK version -->
-		<lombok.version>1.18.2</lombok.version>
+		<lombok.version>1.18.4</lombok.version>
 		<!-- LOGGING versions -->
 		<slf4j.version>1.7.25</slf4j.version>
-		<log4j.version>2.11.0</log4j.version>
+		<log4j.version>2.11.1</log4j.version>
 		<!-- UNIT TEST versions -->
 		<testng.version>6.14.3</testng.version>
 		<junit.version>4.12</junit.version>
-		<mockito-core.version>2.20.1</mockito-core.version>
+		<mockito-core.version>2.23.0</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
 		<!-- MEANBEAN-FACTORIES version -->
