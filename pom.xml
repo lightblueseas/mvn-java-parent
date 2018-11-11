@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -10,7 +11,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>4.2</version>
+	<version>4.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -30,8 +31,8 @@
 		<log4j.version>2.11.1</log4j.version>
 		<!-- UNIT TEST versions -->
 		<testng.version>6.14.3</testng.version>
-		<junit.version>4.12</junit.version>		
-        	<assertj.version>3.11.1</assertj.version>
+		<junit.version>4.12</junit.version>
+		<assertj.version>3.11.1</assertj.version>
 		<mockito-core.version>2.23.0</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
@@ -152,10 +153,10 @@
 			</dependency>
 			<!-- ASSERTJ DEPENDENCY -->
 			<dependency>
-			    <groupId>org.assertj</groupId>
-			    <artifactId>assertj-core</artifactId>
-			    <version>${assertj.version}</version>
-			    <scope>test</scope>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<!-- MOCKITO DEPENDENCY -->
 			<dependency>
@@ -597,9 +598,11 @@
 								</goals>
 								<configuration>
 									<property environment="env"></property>
-									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<property name="antLombokVersion"
+										value="${lombok.version}"></property>
 									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+										<taskdef
+											classname="lombok.delombok.ant.Tasks$Delombok"
 											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
 											name="delombok"></taskdef>
 										<delombok encoding="UTF-8" from="src/main/java"
@@ -657,9 +660,11 @@
 								</goals>
 								<configuration>
 									<property environment="env"></property>
-									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<property name="antLombokVersion"
+										value="${lombok.version}"></property>
 									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+										<taskdef
+											classname="lombok.delombok.ant.Tasks$Delombok"
 											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
 											name="delombok"></taskdef>
 										<delombok encoding="UTF-8" from="src/test/java"
