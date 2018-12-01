@@ -4,6 +4,11 @@
 Version 4.3-SNAPSHOT
 -------------
 
+CHANGED:
+
+- removed logging dependencies 
+- update of mockito-core dependency version to 2.23.4
+
 Version 4.2
 -------------
 
