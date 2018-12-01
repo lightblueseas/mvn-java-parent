@@ -1,6 +1,15 @@
 ## Change log
 ----------------------
 
+Version 4.3
+-------------
+
+CHANGED:
+
+- update of parent version to 2
+- removed logging dependencies 
+- update of mockito-core dependency version to 2.23.4
+
 Version 4.2
 -------------
 

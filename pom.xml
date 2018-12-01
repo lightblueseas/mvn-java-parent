@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-parent-projects</artifactId>
-		<version>1.24</version>
+		<version>2</version>
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>4.2</version>
+	<version>4.3</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -31,7 +32,8 @@
 		<!-- UNIT TEST versions -->
 		<testng.version>6.14.3</testng.version>
 		<junit.version>4.12</junit.version>
-		<mockito-core.version>2.23.0</mockito-core.version>
+		<assertj.version>3.11.1</assertj.version>
+		<mockito-core.version>2.23.4</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
 		<!-- MEANBEAN-FACTORIES version -->
@@ -149,6 +151,13 @@
 				<artifactId>testng</artifactId>
 				<version>${testng.version}</version>
 			</dependency>
+			<!-- ASSERTJ DEPENDENCY -->
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj.version}</version>
+				<scope>test</scope>
+			</dependency>
 			<!-- MOCKITO DEPENDENCY -->
 			<dependency>
 				<groupId>org.mockito</groupId>
@@ -209,28 +218,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>
-		<!-- LOGGING DEPENDENCIES -->
-		<!-- SLF4J DEPENDENCIES -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-		<!-- LOG4J DEPENDENCIES -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
+		</dependency>		
 		<!-- UNIT TESTS DEPENDENCIES -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -589,9 +577,11 @@
 								</goals>
 								<configuration>
 									<property environment="env"></property>
-									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<property name="antLombokVersion"
+										value="${lombok.version}"></property>
 									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+										<taskdef
+											classname="lombok.delombok.ant.Tasks$Delombok"
 											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
 											name="delombok"></taskdef>
 										<delombok encoding="UTF-8" from="src/main/java"
@@ -649,9 +639,11 @@
 								</goals>
 								<configuration>
 									<property environment="env"></property>
-									<property name="antLombokVersion" value="${lombok.version}"></property>
+									<property name="antLombokVersion"
+										value="${lombok.version}"></property>
 									<target name="javadoc">
-										<taskdef classname="lombok.delombok.ant.Tasks$Delombok"
+										<taskdef
+											classname="lombok.delombok.ant.Tasks$Delombok"
 											classpath="${env.HOME}/.m2/repository/org/projectlombok/lombok/${antLombokVersion}/lombok-${antLombokVersion}.jar"
 											name="delombok"></taskdef>
 										<delombok encoding="UTF-8" from="src/test/java"
