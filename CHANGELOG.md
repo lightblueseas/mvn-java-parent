@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 4.4
+-------------
+
+CHANGED:
+
+- removed dependencies of slf4j-api, slf4j-ext, jcl-over-slf4j, slf4j-log4j12, log4j-api and log4j-core
+- added new dependency log4j-to-slf4j
+
 Version 4.3
 -------------
 
