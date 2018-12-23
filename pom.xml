@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>4.4</version>
+	<version>4.5</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -21,7 +21,7 @@
 		Parent project for general java projects.
 	</description>
 
-	<url>https://github.com/lightblueseas/mvn-java-parent</url>
+	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
 	<properties>
 		<!-- LOMBOK version -->
@@ -37,7 +37,7 @@
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
 		<!-- MEANBEAN-FACTORIES version -->
-		<meanbean-factories.version>1.1</meanbean-factories.version>
+		<meanbean-factories.version>1.1.1</meanbean-factories.version>
 		<!-- RANDOM-BEANS version -->
 		<random-beans.version>3.7.0</random-beans.version>
 		<!-- JAVA-SEMVER version -->
@@ -53,9 +53,9 @@
 		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- MAVEN-PMD-PLUGIN version -->
-		<maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN version -->
-		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M2</maven-surefire-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
 		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
 		<!-- COBERTURA-MAVEN-PLUGIN version -->
@@ -65,30 +65,30 @@
 		<!-- EXEC-MAVEN-PLUGIN version -->
 		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
 		<!-- JACOCO-MAVEN-PLUGIN version -->
-		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN version -->
-		<lombok-maven-plugin.version>1.18.0.0</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.18.4.0</lombok-maven-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 
 	</properties>
 
 	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/mvn-java-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-java-parent.git</developerConnection>
-		<url>git:@github.com:lightblueseas/mvn-java-parent.git</url>
+		<connection>scm:git:git:@github.com:lightblueseas/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/${project.artifactId}.git</developerConnection>
+		<url>git:@github.com:lightblueseas/${project.artifactId}.git</url>
 	</scm>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/lightblueseas/mvn-java-parent/issues</url>
+		<url>https://github.com/lightblueseas/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/mvn-java-parent</url>
+		<url>https://travis-ci.org/lightblueseas/${project.artifactId}</url>
 	</ciManagement>
 
 	<dependencyManagement>
