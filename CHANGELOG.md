@@ -1,8 +1,16 @@
 ## Change log
 ----------------------
 
-Version 4.5-SNAPSHOT
+Version 4.5
 -------------
+
+CHANGED:
+
+- update of lombok-maven-plugin dependency version to 1.18.4.0
+- update of meanbean-factories dependency version to 1.1.1
+- update of maven-surefire-plugin dependency version to 3.0.0-M2
+- update of jacoco-maven-plugin dependency version to 0.8.2
+- update of maven-pmd-plugin dependency version to 3.11.0
 
 Version 4.4
 -------------
