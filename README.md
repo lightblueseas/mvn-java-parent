@@ -28,7 +28,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.5</version>
+		<version>4.6</version>
 		<relativePath></relativePath>
 	</parent>	
 ```
@@ -81,8 +81,16 @@ or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%
 
 ## Credits
 
-|Travis CI|
-|:-:|
-|![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)|
-|Many thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects.|
+|**Travis CI**|
+|     :---:      |
+|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/lightblueseas/mvn-java-parent?branch=master)|
+|Special thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects|
+|     <img width=1000/>     |
+
+|**Nexus Sonatype repositories**|
+|     :---:      |
+|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/de.alpharogroup/mvn-java-parent.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~mvn-java-parent~~~)|
+|Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
+|     <img width=1000/>     |
+
 

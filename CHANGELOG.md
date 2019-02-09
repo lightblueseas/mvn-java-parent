@@ -1,8 +1,17 @@
 ## Change log
 ----------------------
 
-Version 4.6-SNAPSHOT
+Version 4.6
 -------------
+
+CHANGED:
+
+- update of parent version to 2.1
+- removed logging dependencies
+- update of mockito-core dependency version to 2.24.0
+- update of random-beans dependency version to 3.8.0
+- update of jacoco-maven-plugin dependency version to 0.8.3
+- update of maven-surefire-plugin dependency version to 3.0.0-M3
 
 Version 4.5
 -------------
