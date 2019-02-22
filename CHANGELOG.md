@@ -1,6 +1,64 @@
 ## Change log
 ----------------------
 
+Version 4.7
+-------------
+
+CHANGED:
+
+- update of lombok version to 1.18.6
+- update of mockito-core dependency version to 2.24.5
+- update of assertj-core dependency version to 3.12.0
+
+Version 4.6
+-------------
+
+CHANGED:
+
+- update of parent version to 2.1
+- removed logging dependencies
+- update of mockito-core dependency version to 2.24.0
+- update of random-beans dependency version to 3.8.0
+- update of jacoco-maven-plugin dependency version to 0.8.3
+- update of maven-surefire-plugin dependency version to 3.0.0-M3
+
+Version 4.5
+-------------
+
+CHANGED:
+
+- update of lombok-maven-plugin dependency version to 1.18.4.0
+- update of meanbean-factories dependency version to 1.1.1
+- update of maven-surefire-plugin dependency version to 3.0.0-M2
+- update of jacoco-maven-plugin dependency version to 0.8.2
+- update of maven-pmd-plugin dependency version to 3.11.0
+
+Version 4.4
+-------------
+
+CHANGED:
+
+- removed dependencies of slf4j-api, slf4j-ext, jcl-over-slf4j, slf4j-log4j12, log4j-api and log4j-core
+- added new dependency log4j-to-slf4j
+
+Version 4.3
+-------------
+
+CHANGED:
+
+- update of parent version to 2
+- removed logging dependencies 
+- update of mockito-core dependency version to 2.23.4
+
+Version 4.2
+-------------
+
+CHANGED:
+
+- update of lombok version to 1.18.4
+- update of log4j version to 2.11.1
+- update of mockito-core dependency version from 2.20.1 to 2.23.0
+
 Version 4.1
 -------------
 
