@@ -4,6 +4,12 @@
 Version 4.7-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of lombok version to 1.18.6
+- update of mockito-core dependency version to 2.24.5
+- update of assertj-core dependency version to 3.12.0
+
 Version 4.6
 -------------
 
