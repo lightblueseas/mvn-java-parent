@@ -4,6 +4,12 @@
 Version 4.8-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of assertj-core dependency version to 3.12.1
+- update of mockito-core dependency version to 2.25.0
+- update of lombok-maven-plugin dependency version to 1.18.6.0
+
 Version 4.7
 -------------
 
