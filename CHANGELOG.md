@@ -4,6 +4,10 @@
 Version 4.9-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of parent version to 2.2
+
 Version 4.8
 -------------
 
