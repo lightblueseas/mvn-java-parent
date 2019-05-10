@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 5
+-------------
+
+CHANGED:
+
+- update of parent version to 2.2
+- update of lombok version to 1.18.8
+
 Version 4.8
 -------------
 
