@@ -6,6 +6,7 @@
 [![Build Status](https://travis-ci.org/lightblueseas/mvn-java-parent.svg?branch=master)](https://travis-ci.org/lightblueseas/mvn-java-parent)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/mvn-java-parent.svg?style=flat)](https://github.com/lightblueseas/mvn-java-parent/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-java-parent)
+[![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
 </div>
 
