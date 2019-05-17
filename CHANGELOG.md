@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 6.1
+-------------
+
+CHANGED:
+
+- added configuration to maven-surefire-plugin that set arg-line illegal-access to permit for suppress warnings
+
 Version 6
 -------------
 

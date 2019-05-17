@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6</version>
+	<version>6.1</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -167,7 +167,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>		
+		</dependency>
 		<!-- UNIT TESTS DEPENDENCIES -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -298,6 +298,11 @@
 					<inherited>true</inherited>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${maven-surefire-plugin.version}</version>
+					<configuration>
+						<argLine>
+							--illegal-access=permit
+						</argLine>
+					</configuration>
 				</plugin>
 
 				<plugin>
@@ -509,7 +514,7 @@
 								<groupId>org.projectlombok</groupId>
 								<artifactId>lombok</artifactId>
 								<version>${lombok.version}</version>
-							</dependency>							
+							</dependency>
 						</dependencies>
 						<executions>
 							<execution>
