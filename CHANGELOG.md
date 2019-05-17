@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 6
+-------------
+
+CHANGED:
+
+- update of parent version to 3 that uses java release 11
+
 Version 5
 -------------
 
