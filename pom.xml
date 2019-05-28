@@ -27,9 +27,15 @@
 		<!-- LOMBOK version -->
 		<lombok.version>1.18.8</lombok.version>
 		<!-- UNIT TEST versions -->
+		<!-- TESTNG version -->
 		<testng.version>6.14.3</testng.version>
+		<!-- JUNIT version -->
 		<junit.version>4.12</junit.version>
+		<!-- ASSERTJ version -->
 		<assertj.version>3.12.2</assertj.version>
+		<!-- HAMCREST version -->
+		<hamcrest.version>1.3</hamcrest.version>
+		<!-- MOCKITO-CORE version -->
 		<mockito-core.version>2.27.0</mockito-core.version>
 		<!-- MEANBEAN version -->
 		<meanbean.version>2.0.3</meanbean.version>
@@ -95,6 +101,24 @@
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
 			</dependency>
+			<!-- JAVA-SEMVER DEPENDENCIES -->
+			<dependency>
+				<groupId>com.github.zafarkhaja</groupId>
+				<artifactId>java-semver</artifactId>
+				<version>${java-semver.version}</version>
+			</dependency>
+			<!-- JSR305 DEPENDENCY -->
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${jsr305.version}</version>
+			</dependency>
+			<!-- JSR250-API DEPENDENCIES -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>jsr250-api</artifactId>
+				<version>${jsr250-api.version}</version>
+			</dependency>
 			<!-- UNIT DEPENDENCIES FOR TESTING -->
 			<!-- JUNIT DEPENDENCY -->
 			<dependency>
@@ -113,7 +137,12 @@
 				<groupId>org.assertj</groupId>
 				<artifactId>assertj-core</artifactId>
 				<version>${assertj.version}</version>
-				<scope>test</scope>
+			</dependency>
+			<!-- HAMCREST DEPENDENCY -->
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>${hamcrest.version}</version>
 			</dependency>
 			<!-- MOCKITO DEPENDENCY -->
 			<dependency>
@@ -138,24 +167,6 @@
 				<groupId>io.github.benas</groupId>
 				<artifactId>random-beans</artifactId>
 				<version>${random-beans.version}</version>
-			</dependency>
-			<!-- JAVA-SEMVER DEPENDENCIES -->
-			<dependency>
-				<groupId>com.github.zafarkhaja</groupId>
-				<artifactId>java-semver</artifactId>
-				<version>${java-semver.version}</version>
-			</dependency>
-			<!-- JSR305 DEPENDENCY -->
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>jsr305</artifactId>
-				<version>${jsr305.version}</version>
-			</dependency>
-			<!-- JSR250-API DEPENDENCIES -->
-			<dependency>
-				<groupId>javax.annotation</groupId>
-				<artifactId>jsr250-api</artifactId>
-				<version>${jsr250-api.version}</version>
 			</dependency>
 
 		</dependencies>

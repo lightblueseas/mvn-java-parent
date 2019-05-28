@@ -4,6 +4,10 @@
 Version 6.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new dependency hamcrest for unit testing added
+
 Version 6.1
 -------------
 
