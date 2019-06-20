@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6.2-SNAPSHOT</version>
+	<version>6.2</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -69,7 +69,7 @@
 		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN version -->
-		<lombok-maven-plugin.version>1.18.6.0</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.18.8.0</lombok-maven-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 

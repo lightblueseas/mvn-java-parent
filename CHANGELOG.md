@@ -1,11 +1,12 @@
 ## Change log
 ----------------------
 
-Version 6.2-SNAPSHOT
+Version 6.2
 -------------
 
 ADDED:
 
+- update of lombok-maven-plugin dependency version to 1.18.8.0
 - new dependency hamcrest for unit testing added
 - added executions section to jacoco-maven-plugin
 
