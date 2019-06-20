@@ -7,6 +7,7 @@ Version 6.2-SNAPSHOT
 ADDED:
 
 - new dependency hamcrest for unit testing added
+- added executions section to jacoco-maven-plugin
 
 Version 6.1
 -------------
