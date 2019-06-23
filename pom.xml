@@ -4,14 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>de.alpharogroup</groupId>
-		<artifactId>mvn-parent-projects</artifactId>
-		<version>3</version>
-	</parent>
-
+	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6.3-SNAPSHOT</version>
+	<version>6.3</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -24,6 +19,8 @@
 	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
 	<properties>
+		<!-- PROJECT encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- LOMBOK version -->
 		<lombok.version>1.18.8</lombok.version>
 		<!-- UNIT TEST versions -->
@@ -50,14 +47,63 @@
 		<!-- JSR250-API LIB version -->
 		<jsr250-api.version>1.0</jsr250-api.version>
 		<!-- MAVEN PLUGIN versions -->
+		<!-- MAVEN ASSEBLY PLUGIN version -->
+		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
+		<!-- MAVEN CHANGELOG PLUGIN version -->
+		<maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
+		<!-- MAVEN CLEAN PLUGIN version -->
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+		<!-- MAVEN COMPILER PLUGIN version -->
+		<java.version>11</java.version>
+		<java-release.version>${java.version}</java-release.version>
+		<java-target.version>${java.version}</java-target.version>
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven.compiler.source>${java-release.version}</maven.compiler.source>
+		<maven.compiler.target>${java-target.version}</maven.compiler.target>
+		<maven.compiler.optimize>true</maven.compiler.optimize>
+		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+		<maven.compiler.debug>true</maven.compiler.debug>
+		<!-- MAVEN DEPENDENCY PLUGIN version -->
+		<maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+		<!-- MAVEN DEPLOY PLUGIN version -->
+		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+		<!-- MAVEN ECLIPSE PLUGIN version -->
+		<maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
+		<!-- MAVEN GPG PLUGIN version -->
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<!-- MAVEN INSTALL PLUGIN versions -->
+		<maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
+		<!-- MAVEN JAVADOC PLUGIN version -->
+		<maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
+		<!-- MAVEN-JAR-PLUGIN versions -->
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<!-- MAVEN RELEASE PLUGIN version -->
+		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+		<!-- MAVEN RESOURCES PLUGIN version -->
+		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<!-- MAVEN SOURCE PLUGIN version -->
+		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+		<!-- MAVEN SCM-PUBLISH PLUGIN version -->
+		<maven-scm-publish-plugin.version>3.0.0</maven-scm-publish-plugin.version>
+		<!-- BUILD-HELPER MAVEN PLUGIN versions -->
+		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+		<!-- FORMATTER-MAVEN-PLUGIN version -->
+		<formatter-maven-plugin.version>2.9.0</formatter-maven-plugin.version>
+		<!-- NEXUS STAGING MAVEN PLUGIN version -->
+		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<!-- SORTPOM-MAVEN-PLUGIN version -->
+		<sortpom-maven-plugin.version>2.10.0</sortpom-maven-plugin.version>
+		<!-- VERSIONS-MAVEN-PLUGIN versions -->
+		<versions-maven-plugin.version>2.7</versions-maven-plugin.version>
+		<!-- -->
 		<!-- MAVEN-ANTRUN-PLUGIN version -->
 		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
 		<!-- MAVEN-PMD-PLUGIN version -->
-		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
+		<maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
 		<!-- MAVEN-SUREFIRE-PLUGIN version -->
 		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
-		<maven-toolchains-plugin.version>1.1</maven-toolchains-plugin.version>
+		<maven-toolchains-plugin.version>3.0.0</maven-toolchains-plugin.version>
 		<!-- COBERTURA-MAVEN-PLUGIN version -->
 		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN version -->
@@ -252,6 +298,221 @@
 			<plugins>
 
 				<plugin>
+					<inherited>true</inherited>
+					<!-- NOTE: We don't need a groupId specification because the group is 
+						org.apache.maven.plugins ...which is assumed by default. -->
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<release>${maven.compiler.source}</release>
+						<target>${maven.compiler.target}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<optimize>${maven.compiler.optimize}</optimize>
+						<showWarnings>${maven.compiler.showWarnings}</showWarnings>
+						<debug>${maven.compiler.debug}</debug>
+					</configuration>
+				</plugin>
+				<!-- Configuring maven source plugin: To attach source artifacts to your 
+					build we execute the source:jar goal from the source plugin during the package 
+					phase. -->
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- Configuring maven clean plugin: deletes the generated test-output 
+					directories that are generated from testng. -->
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin.version}</version>
+					<configuration>
+						<filesets>
+							<fileset>
+								<directory>test-output</directory>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+						</filesets>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven-install-plugin.version}</version>
+				</plugin>
+				<!-- Configuring Maven Javadoc Plugin: To attach javadoc artifacts to 
+					your build we execute the javadoc:jar goal from the javadoc plugin. -->
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+					<configuration>
+						<detectOfflineLinks>false</detectOfflineLinks>
+						<minmemory>128m</minmemory>
+						<maxmemory>256m</maxmemory>
+						<notimestamp>true</notimestamp>
+						<quiet>true</quiet>
+						<links>
+							<link>http://docs.oracle.com/javase/8/docs/api/</link>
+							<link>http://docs.oracle.com/javaee/7/api/</link>
+						</links>
+					</configuration>
+					<executions>
+						<execution>
+							<id>attach-javadoc</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven-jar-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>${build-helper-maven-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>${maven-eclipse-plugin.version}</version>
+					<configuration>
+						<downloadSources>true</downloadSources>
+						<additionalBuildcommands>
+							<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+						</additionalBuildcommands>
+						<additionalProjectnatures>
+							<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+						</additionalProjectnatures>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven-assembly-plugin.version}</version>
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+					<executions>
+						<execution>
+							<id>make-assembly</id>
+							<!-- this is used for inheritance merges -->
+							<phase>package</phase>
+							<!-- append to the packaging phase. -->
+							<goals>
+								<goal>single</goal>
+								<!-- goals == mojos -->
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${maven-deploy-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+					<configuration>
+						<mavenExecutorId>forked-path</mavenExecutorId>
+					</configuration>
+				</plugin>
+
+				<!-- Signing with gpg -->
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${maven-gpg-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- The Nexus Staging Maven Plugin is the recommended way to deploy 
+					your components to OSSRH and release them to the Central Repository. _______________ 
+					If your version is a release version (does not end in -SNAPSHOT) and with 
+					this setup in place, you can run a deployment to OSSRH and an automated release 
+					to the Central Repository with the usual: mvn clean deploy _________________________ 
+					With the property autoReleaseAfterClose set to false you can manually inspect 
+					the staging repository in Nexus and trigger a release of the staging repository 
+					later with: mvn nexus-staging:release. -->
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>${nexus-staging-maven-plugin.version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<serverId>ossrh</serverId>
+						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+						<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven-dependency-plugin.version}</version>
+				</plugin>
+				<!-- See usage on: http://maven.apache.org/plugins/maven-changelog-plugin/usage.html -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-changelog-plugin</artifactId>
+					<version>${maven-changelog-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>${versions-maven-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>net.revelc.code.formatter</groupId>
+					<artifactId>formatter-maven-plugin</artifactId>
+					<version>${formatter-maven-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>com.github.ekryd.sortpom</groupId>
+					<artifactId>sortpom-maven-plugin</artifactId>
+					<version>${sortpom-maven-plugin.version}</version>
+				</plugin>
+				<!-- -->
+				<plugin>
 					<groupId>com.mycila</groupId>
 					<artifactId>license-maven-plugin</artifactId>
 					<version>${license-maven-plugin.version}</version>
@@ -310,9 +571,7 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${maven-surefire-plugin.version}</version>
 					<configuration>
-						<argLine>
-							--illegal-access=permit
-						</argLine>
+						<argLine>@{argLine} --illegal-access=permit -Xmx2048m</argLine>
 					</configuration>
 				</plugin>
 
@@ -348,6 +607,13 @@
 						<execution>
 							<goals>
 								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>report</id>
+							<phase>test</phase>
+							<goals>
+								<goal>report</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -416,7 +682,272 @@
 	</build>
 
 	<profiles>
+	
 
+		<profile>
+			<id>oss.sonatype.org-staged-release</id>
+			<!-- This is the profile to use for releasing into the staged release 
+				repo. We need to sign the artifacts. -->
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<distributionManagement>
+				<repository>
+					<id>ossrh</id>
+					<name>Nexus Release Repository</name>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<name>Sonatype Nexus Snapshots</name>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+
+			<build>
+				<plugins>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-javadoc-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-source-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+
+				</plugins>
+			</build>
+
+		</profile>
+
+		<profile>
+			<id>sortpom</id>
+			<!-- This is the profile to use for sort the pom.xml. -->
+			<activation>
+				<property>
+					<name>sortpom</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-dependencies</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-dependencies</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${project.build.directory}</outputDirectory>
+									<overWriteReleases>true</overWriteReleases>
+									<overWriteSnapshots>true</overWriteSnapshots>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>net.revelc.code.formatter</groupId>
+						<artifactId>formatter-maven-plugin</artifactId>
+						<version>${formatter-maven-plugin.version}</version>
+						<configuration>
+							<configFile>${project.basedir}/src/main/resources/EclipseCodeFormat.xml</configFile>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>com.github.ekryd.sortpom</groupId>
+						<artifactId>sortpom-maven-plugin</artifactId>
+						<version>${sortpom-maven-plugin.version}</version>
+						<configuration>
+							<encoding>${project.build.sourceEncoding}</encoding>
+							<sortOrderFile>${project.basedir}/src/main/resources/sortOrderFile-tmpl.xml</sortOrderFile>
+							<sortProperties>false</sortProperties>
+							<keepBlankLines>true</keepBlankLines>
+							<sortDependencies>scope</sortDependencies>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sort</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>changelog-range-100</id>
+
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>100</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+			<reporting>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>100</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</reporting>
+
+		</profile>
+
+		<profile>
+
+			<id>changelog-range-1000</id>
+
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>1000</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+			<reporting>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>1000</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</reporting>
+
+		</profile>
+
+		<profile>
+
+			<id>changelog-range-365</id>
+
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>365</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+			<reporting>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven-changelog-plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>365</range>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</reporting>
+
+		</profile>	
+		<!--  -->
 		<profile>
 			<id>release-sign-artifacts</id>
 			<activation>
