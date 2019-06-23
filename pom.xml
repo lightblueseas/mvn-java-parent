@@ -118,8 +118,37 @@
 		<lombok-maven-plugin.version>1.18.8.0</lombok-maven-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-
 	</properties>
+
+	<organization>
+		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
+		<url>http://www.alpharogroup.de/</url>
+	</organization>
+
+	<licenses>
+
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+
+	</licenses>
+
+	<developers>
+
+		<developer>
+			<id>astrapi69</id>
+			<name>Asterios Raptis</name>
+			<email>astrapi69 at users.sf.net</email>
+			<roles>
+				<role>Project manager</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>Berlin</timezone>
+		</developer>
+
+	</developers>
 
 	<scm>
 		<connection>scm:git:git:@github.com:lightblueseas/${project.artifactId}.git</connection>
