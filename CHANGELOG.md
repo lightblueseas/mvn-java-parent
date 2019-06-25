@@ -1,41 +1,23 @@
 ## Change log
 ----------------------
 
-Version 6.3
--------------
-
-CHANGED:
-
-- remove parent project and moved all needed profiles to this parent project
-- update of maven-pmd-plugin dependency version to 3.12.0
-- update of maven-toolchains-plugin dependency version to 3.0.0
-
-Version 6.2
+Version 5.1
 -------------
 
 ADDED:
 
-- new dependency hamcrest for unit testing added
 - added executions section to jacoco-maven-plugin
 
 CHANGED:
 
+- remove cobertura-maven-plugin from pluginManagement section
+- remove parent project and moved all needed profiles to this parent project
+- update of maven-pmd-plugin dependency version to 3.12.0
+- update of maven-toolchains-plugin dependency version to 3.0.0
 - update of lombok-maven-plugin dependency version to 1.18.8.0
 - update of mockito-core dependency version to 2.28.2
 - update of jacoco-maven-plugin dependency version to 0.8.4
-
-Version 6.1
--------------
-
-
 - added configuration to maven-surefire-plugin that set arg-line illegal-access to permit for suppress warnings
-
-Version 6
--------------
-
-CHANGED:
-
-- update of parent version to 3 that uses java release 11
 
 Version 5
 -------------

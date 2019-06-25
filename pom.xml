@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6.3</version>
+	<version>5.1</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -46,6 +46,9 @@
 		<jsr305.version>3.0.2</jsr305.version>
 		<!-- JSR250-API LIB version -->
 		<jsr250-api.version>1.0</jsr250-api.version>
+		<!-- COM-SUN-TOOLS versions -->
+		<com.sun-tools.version>1.7.0.13</com.sun-tools.version>
+		<system-path-of-tools-jar>${java.home}/../lib/tools.jar</system-path-of-tools-jar>
 		<!-- MAVEN PLUGIN versions -->
 		<!-- MAVEN ASSEBLY PLUGIN version -->
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
@@ -54,7 +57,7 @@
 		<!-- MAVEN CLEAN PLUGIN version -->
 		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
 		<!-- MAVEN COMPILER PLUGIN version -->
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<java-release.version>${java.version}</java-release.version>
 		<java-target.version>${java.version}</java-target.version>
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
@@ -104,8 +107,6 @@
 		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
 		<maven-toolchains-plugin.version>3.0.0</maven-toolchains-plugin.version>
-		<!-- COBERTURA-MAVEN-PLUGIN version -->
-		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN version -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<!-- EXEC-MAVEN-PLUGIN version -->
@@ -176,24 +177,6 @@
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
 			</dependency>
-			<!-- JAVA-SEMVER DEPENDENCIES -->
-			<dependency>
-				<groupId>com.github.zafarkhaja</groupId>
-				<artifactId>java-semver</artifactId>
-				<version>${java-semver.version}</version>
-			</dependency>
-			<!-- JSR305 DEPENDENCY -->
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>jsr305</artifactId>
-				<version>${jsr305.version}</version>
-			</dependency>
-			<!-- JSR250-API DEPENDENCIES -->
-			<dependency>
-				<groupId>javax.annotation</groupId>
-				<artifactId>jsr250-api</artifactId>
-				<version>${jsr250-api.version}</version>
-			</dependency>
 			<!-- UNIT DEPENDENCIES FOR TESTING -->
 			<!-- JUNIT DEPENDENCY -->
 			<dependency>
@@ -212,12 +195,7 @@
 				<groupId>org.assertj</groupId>
 				<artifactId>assertj-core</artifactId>
 				<version>${assertj.version}</version>
-			</dependency>
-			<!-- HAMCREST DEPENDENCY -->
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest-all</artifactId>
-				<version>${hamcrest.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<!-- MOCKITO DEPENDENCY -->
 			<dependency>
@@ -243,7 +221,32 @@
 				<artifactId>random-beans</artifactId>
 				<version>${random-beans.version}</version>
 			</dependency>
-
+			<!-- JAVA-SEMVER DEPENDENCIES -->
+			<dependency>
+				<groupId>com.github.zafarkhaja</groupId>
+				<artifactId>java-semver</artifactId>
+				<version>${java-semver.version}</version>
+			</dependency>
+			<!-- JSR305 DEPENDENCY -->
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${jsr305.version}</version>
+			</dependency>
+			<!-- JSR250-API DEPENDENCIES -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>jsr250-api</artifactId>
+				<version>${jsr250-api.version}</version>
+			</dependency>
+			<!-- COM-SUN-TOOLS DEPENDENCIES -->
+			<dependency>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+				<version>${com.sun-tools.version}</version>
+				<scope>system</scope>
+				<systemPath>${system-path-of-tools-jar}</systemPath>
+			</dependency>
 		</dependencies>
 
 	</dependencyManagement>
@@ -333,7 +336,7 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
-						<release>${maven.compiler.source}</release>
+						<source>${maven.compiler.source}</source>
 						<target>${maven.compiler.target}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
 						<optimize>${maven.compiler.optimize}</optimize>
@@ -389,10 +392,6 @@
 						<maxmemory>256m</maxmemory>
 						<notimestamp>true</notimestamp>
 						<quiet>true</quiet>
-						<links>
-							<link>http://docs.oracle.com/javase/8/docs/api/</link>
-							<link>http://docs.oracle.com/javaee/7/api/</link>
-						</links>
 					</configuration>
 					<executions>
 						<execution>
@@ -617,18 +616,6 @@
 				</plugin>
 
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>${cobertura-maven-plugin.version}</version>
-					<configuration>
-						<format>xml</format>
-						<maxmem>256m</maxmem>
-						<!-- aggregated reports for multi-module projects -->
-						<aggregate>true</aggregate>
-					</configuration>
-				</plugin>
-
-				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
 					<version>${jacoco-maven-plugin.version}</version>
@@ -711,7 +698,6 @@
 	</build>
 
 	<profiles>
-	
 
 		<profile>
 			<id>oss.sonatype.org-staged-release</id>
@@ -975,8 +961,8 @@
 
 			</reporting>
 
-		</profile>	
-		<!--  -->
+		</profile>
+		
 		<profile>
 			<id>release-sign-artifacts</id>
 			<activation>
@@ -1093,6 +1079,13 @@
 								<artifactId>lombok</artifactId>
 								<version>${lombok.version}</version>
 							</dependency>
+							<dependency>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+								<version>${com.sun-tools.version}</version>
+								<scope>system</scope>
+								<systemPath>${system-path-of-tools-jar}</systemPath>
+							</dependency>
 						</dependencies>
 						<executions>
 							<execution>
@@ -1147,6 +1140,13 @@
 								<groupId>org.projectlombok</groupId>
 								<artifactId>lombok</artifactId>
 								<version>${lombok.version}</version>
+							</dependency>
+							<dependency>
+								<groupId>com.sun</groupId>
+								<artifactId>tools</artifactId>
+								<version>${com.sun-tools.version}</version>
+								<scope>system</scope>
+								<systemPath>${system-path-of-tools-jar}</systemPath>
 							</dependency>
 						</dependencies>
 						<executions>
