@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 5.2
+-------------
+
+CHANGED:
+
+- added new configuration for maven-surefire-plugin
+
 Version 5.1
 -------------
 
