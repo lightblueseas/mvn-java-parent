@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>5.2-SNAPSHOT</version>
+	<version>5.2</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -599,7 +599,9 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${maven-surefire-plugin.version}</version>
 					<configuration>
-						<argLine>@{argLine} --illegal-access=permit -Xmx2048m</argLine>
+						<forkCount>3</forkCount>
+						<reuseForks>true</reuseForks>
+						<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 					</configuration>
 				</plugin>
 
@@ -962,7 +964,7 @@
 			</reporting>
 
 		</profile>
-		
+
 		<profile>
 			<id>release-sign-artifacts</id>
 			<activation>
