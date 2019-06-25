@@ -387,10 +387,6 @@
 						<maxmemory>256m</maxmemory>
 						<notimestamp>true</notimestamp>
 						<quiet>true</quiet>
-						<links>
-							<link>http://docs.oracle.com/javase/8/docs/api/</link>
-							<link>http://docs.oracle.com/javaee/7/api/</link>
-						</links>
 					</configuration>
 					<executions>
 						<execution>
@@ -726,10 +722,11 @@
 			<build>
 				<plugins>
 
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
+<!-- temporalily disabled cause of https://bugs.openjdk.java.net/browse/JDK-8200432 -->
+<!-- 					<plugin> -->
+<!-- 						<inherited>true</inherited> -->
+<!-- 						<artifactId>maven-javadoc-plugin</artifactId> -->
+<!-- 					</plugin> -->
 
 					<plugin>
 						<inherited>true</inherited>
