@@ -7,6 +7,7 @@ Version 6.4-SNAPSHOT
 CHANGED:
 
 - remove cobertura-maven-plugin from pluginManagement section
+- temporalily disabled maven-javadoc-plugin in deploy profile cause of openjdk bug JDK-8200432
 
 Version 6.3
 -------------
