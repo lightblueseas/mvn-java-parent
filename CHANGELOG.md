@@ -1,7 +1,12 @@
 ## Change log
 ----------------------
 
-Version 6.4-SNAPSHOT
+Version 6.5-SNAPSHOT
+-------------
+
+- enabled maven-javadoc-plugin in deploy profile
+ 
+Version 6.4
 -------------
 
 CHANGED:

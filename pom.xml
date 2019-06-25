@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6.4</version>
+	<version>6.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -722,11 +722,10 @@
 			<build>
 				<plugins>
 
-<!-- temporalily disabled cause of https://bugs.openjdk.java.net/browse/JDK-8200432 -->
-<!-- 					<plugin> -->
-<!-- 						<inherited>true</inherited> -->
-<!-- 						<artifactId>maven-javadoc-plugin</artifactId> -->
-<!-- 					</plugin> -->
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-javadoc-plugin</artifactId>
+					</plugin>
 
 					<plugin>
 						<inherited>true</inherited>
