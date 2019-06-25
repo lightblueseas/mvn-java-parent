@@ -4,6 +4,10 @@
 Version 6.4-SNAPSHOT
 -------------
 
+CHANGED:
+
+- remove cobertura-maven-plugin from pluginManagement section
+
 Version 6.3
 -------------
 

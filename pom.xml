@@ -104,8 +104,6 @@
 		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
 		<!-- MAVEN-TOOLCHAINS-PLUGIN version -->
 		<maven-toolchains-plugin.version>3.0.0</maven-toolchains-plugin.version>
-		<!-- COBERTURA-MAVEN-PLUGIN version -->
-		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<!-- COVERAGE-MAVEN-PLUGIN version -->
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<!-- EXEC-MAVEN-PLUGIN version -->
@@ -614,18 +612,6 @@
 					<groupId>org.eluder.coveralls</groupId>
 					<artifactId>coveralls-maven-plugin</artifactId>
 					<version>${coveralls-maven-plugin.version}</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>${cobertura-maven-plugin.version}</version>
-					<configuration>
-						<format>xml</format>
-						<maxmem>256m</maxmem>
-						<!-- aggregated reports for multi-module projects -->
-						<aggregate>true</aggregate>
-					</configuration>
 				</plugin>
 
 				<plugin>
