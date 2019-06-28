@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>6.3</version>
+	<version>6.4.1</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -56,7 +56,7 @@
 		<!-- MAVEN COMPILER PLUGIN version -->
 		<java.version>11</java.version>
 		<java-release.version>${java.version}</java-release.version>
-		<java-target.version>${java.version}</java-target.version>
+		<java-target.version>1.8</java-target.version>
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven.compiler.source>${java-release.version}</maven.compiler.source>
 		<maven.compiler.target>${java-target.version}</maven.compiler.target>

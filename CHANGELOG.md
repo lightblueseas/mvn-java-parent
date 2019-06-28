@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 6.4.1
+-------------
+
+CHANGED:
+
+- java-target.version changed back to 1.8
+
 Version 6.3
 -------------
 
