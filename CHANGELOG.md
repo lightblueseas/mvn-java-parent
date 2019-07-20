@@ -4,6 +4,13 @@
 Version 5.3-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of maven-compiler-plugin dependency version to 3.8.1
+- update of maven-javadoc-plugin dependency version to 3.1.1
+- update of maven-source-plugin dependency version to 3.1.0
+- update of maven-jar-plugin dependency version to 3.1.2
+
 Version 5.2
 -------------
 
