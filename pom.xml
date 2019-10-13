@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>5.3-SNAPSHOT</version>
+	<version>5.3</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -17,6 +17,10 @@
 	</description>
 
 	<url>https://github.com/lightblueseas/${project.artifactId}</url>
+
+	<prerequisites>
+		<maven>3.3.9</maven>
+	</prerequisites>
 
 	<properties>
 		<!-- PROJECT encoding -->

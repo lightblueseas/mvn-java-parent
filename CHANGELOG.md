@@ -1,8 +1,12 @@
 ## Change log
 ----------------------
 
-Version 5.3-SNAPSHOT
+Version 5.3
 -------------
+
+ADDED:
+
+- added minimum maven version 3.3.9 for project
 
 CHANGED:
 
