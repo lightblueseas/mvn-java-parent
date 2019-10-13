@@ -1,6 +1,25 @@
 ## Change log
 ----------------------
 
+Version 5.3
+-------------
+
+ADDED:
+
+- added minimum maven version 3.3.9 for project
+
+CHANGED:
+
+- update of lombok version to 1.18.10
+- update of testng version to 7.0.0
+- update of assertj version to 3.13.2
+- update of maven-compiler-plugin dependency version to 3.8.1
+- update of maven-javadoc-plugin dependency version to 3.1.1
+- update of maven-source-plugin dependency version to 3.1.0
+- update of maven-jar-plugin dependency version to 3.1.2
+- update of lombok-maven-plugin dependency version to 1.18.10.0
+- update of formatter-maven-plugin dependency version to 2.10.0
+
 Version 5.2
 -------------
 

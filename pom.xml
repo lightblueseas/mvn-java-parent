@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>5.2</version>
+	<version>5.3</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -18,18 +18,22 @@
 
 	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
+	<prerequisites>
+		<maven>3.3.9</maven>
+	</prerequisites>
+
 	<properties>
 		<!-- PROJECT encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- LOMBOK version -->
-		<lombok.version>1.18.8</lombok.version>
+		<lombok.version>1.18.10</lombok.version>
 		<!-- UNIT TEST versions -->
 		<!-- TESTNG version -->
-		<testng.version>6.14.3</testng.version>
+		<testng.version>7.0.0</testng.version>
 		<!-- JUNIT version -->
 		<junit.version>4.12</junit.version>
 		<!-- ASSERTJ version -->
-		<assertj.version>3.12.2</assertj.version>
+		<assertj.version>3.13.2</assertj.version>
 		<!-- HAMCREST version -->
 		<hamcrest.version>1.3</hamcrest.version>
 		<!-- MOCKITO-CORE version -->
@@ -60,7 +64,7 @@
 		<java.version>1.8</java.version>
 		<java-release.version>${java.version}</java-release.version>
 		<java-target.version>${java.version}</java-target.version>
-		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven.compiler.source>${java-release.version}</maven.compiler.source>
 		<maven.compiler.target>${java-target.version}</maven.compiler.target>
 		<maven.compiler.optimize>true</maven.compiler.optimize>
@@ -77,21 +81,21 @@
 		<!-- MAVEN INSTALL PLUGIN versions -->
 		<maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
 		<!-- MAVEN JAVADOC PLUGIN version -->
-		<maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
+		<maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
 		<!-- MAVEN-JAR-PLUGIN versions -->
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
 		<!-- MAVEN RELEASE PLUGIN version -->
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<!-- MAVEN RESOURCES PLUGIN version -->
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		<!-- MAVEN SOURCE PLUGIN version -->
-		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+		<maven-source-plugin.version>3.1.0</maven-source-plugin.version>
 		<!-- MAVEN SCM-PUBLISH PLUGIN version -->
 		<maven-scm-publish-plugin.version>3.0.0</maven-scm-publish-plugin.version>
 		<!-- BUILD-HELPER MAVEN PLUGIN versions -->
 		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
 		<!-- FORMATTER-MAVEN-PLUGIN version -->
-		<formatter-maven-plugin.version>2.9.0</formatter-maven-plugin.version>
+		<formatter-maven-plugin.version>2.10.0</formatter-maven-plugin.version>
 		<!-- NEXUS STAGING MAVEN PLUGIN version -->
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<!-- SORTPOM-MAVEN-PLUGIN version -->
@@ -112,11 +116,11 @@
 		<!-- EXEC-MAVEN-PLUGIN version -->
 		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
 		<!-- JACOCO-MAVEN-PLUGIN version -->
-		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
 		<!-- LICENSE-MAVEN-PLUGIN version -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<!-- LOMBOK-MAVEN-PLUGIN version -->
-		<lombok-maven-plugin.version>1.18.8.0</lombok-maven-plugin.version>
+		<lombok-maven-plugin.version>1.18.10.0</lombok-maven-plugin.version>
 		<!-- PROPERTIES-MAVEN-PLUGIN version -->
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 	</properties>
