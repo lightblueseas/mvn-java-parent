@@ -1,6 +1,19 @@
 ## Change log
 ----------------------
 
+Version 5.4
+-------------
+
+ADDED:
+
+- new profile that can generate reports for travis build
+
+CHANGED:
+
+- update of assertj version to 3.14.0
+- update of mockito-core dependency version to 3.1.0
+- update of junit dependency version to 4.13-rc-1
+
 Version 5.3
 -------------
 
