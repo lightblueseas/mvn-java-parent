@@ -6,7 +6,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-java-parent</artifactId>
-	<version>5.5-SNAPSHOT</version>
+	<version>5.5</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -828,7 +828,8 @@
 		<profile>
 
 			<id>changelog-range-100</id>
-			<!-- This is the profile to use for create a changelog for the last 100 days -->
+			<!-- This is the profile to use for create a changelog for the last 100 
+				days -->
 			<activation>
 				<property>
 					<name>performRelease</name>
@@ -1094,7 +1095,7 @@
 
 		<profile>
 			<id>code-coverage-cobertura-html-reporting</id>
-			<!-- This profile generates code coverage reports  with cobertura plugin -->
+			<!-- This profile generates code coverage reports with cobertura plugin -->
 			<activation>
 				<property>
 					<name>performRelease</name>
@@ -1146,7 +1147,7 @@
 			</reporting>
 
 		</profile>
-		
+
 		<profile>
 			<id>coveralls</id>
 			<!-- This profile generates reports with coveralls plugin -->
@@ -1156,6 +1157,10 @@
 						<groupId>org.eluder.coveralls</groupId>
 						<artifactId>coveralls-maven-plugin</artifactId>
 						<version>${coveralls-maven-plugin.version}</version>
+						<configuration>
+							<repoToken>${env.COVERALLS_TOKEN}</repoToken>
+							<sourceEncoding>UTF-8</sourceEncoding>
+						</configuration>
 					</plugin>
 
 					<plugin>
