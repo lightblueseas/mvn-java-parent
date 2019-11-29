@@ -4,6 +4,13 @@
 Version 5.5-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of maven-assembly-plugin dependency version to 3.2.0
+- update of maven-jar-plugin dependency version to 3.2.0
+- update of maven-source-plugin dependency version to 3.2.0
+- update of formatter-maven-plugin dependency version to 2.11.0
+
 Version 5.4
 -------------
 
